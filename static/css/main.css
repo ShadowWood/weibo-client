@@ -1,0 +1,23 @@
+html, body {
+  font-family:  "Microsoft YaHei", "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.page-content{
+  max-width: 900px;
+  padding: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: 10px auto;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.material-icons {
+  color: rgba(0, 0, 0, 0.24);
+}
