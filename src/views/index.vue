@@ -13,9 +13,9 @@
 </template>
 
 <script>
-  import HotTopic from './componets/index-hottopics'
-  import FindPeople from './componets/index-find-people'
-  import MessageList from './componets/index-message'
+  import HotTopic from '../components/index-hottopics'
+  import FindPeople from '../components/index-find-people.vue'
+  import MessageList from '../components/index-message.vue'
   module.exports = {
     'data': function () {
       return {
