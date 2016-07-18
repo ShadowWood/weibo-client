@@ -3,9 +3,9 @@
  */
 import IndexView from './views/index'
 import DashBoard from './views/dashboard'
-import MyHostPage from './components/my-host-page'
-import MyPhotos from './components/my-photos'
-import MySettings from './components/my-settings'
+import MyHostPage from './views/my-host-page'
+import MyPhotos from './views/my-photos'
+import MySettings from './views/my-settings'
 
 export default function (router) {
   router.map({

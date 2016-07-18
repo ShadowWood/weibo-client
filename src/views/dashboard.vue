@@ -1,6 +1,6 @@
 <template>
-    <div class="mdl-cell mdl-cell--12-col">
-        <div class="user-mes-card mdl-card mdl-shadow--2dp">
+    <div class="mdl-cell mdl-cell--12-col user-mes-card">
+        <div class="mdl-card mdl-shadow--2dp">
             <div class="mdl-card__supporting-text">
                 <img class="user-avatar" src="../assets/images/avatar.png">
             </div>
@@ -16,9 +16,7 @@
         </div>
     </div>
 
-    <div class="mdl-cell mdl-cell--12-col">
-        <router-view></router-view>
-    </div>
+    <router-view></router-view>
 </template>
 <script>
     export default {
@@ -36,10 +34,14 @@
 </script>
 <style>
     .user-mes-card {
+        padding: 8px;
+    }
+
+    .user-mes-card > .mdl-card {
         width: 100%;
     }
 
-    .user-mes-card > .mdl-card__supporting-text {
+    .user-mes-card > div > .mdl-card__supporting-text {
         background: url('../assets/images/b1.jpg') center / cover;
         width: 100%;
         height: 200px;
