@@ -8,9 +8,11 @@
         <div class="mdl-card__actions mdl-card--border">
             <mdl-button icon>
                 <i class="material-icons">thumb_up</i>
+                <i class="icons-number">99</i>
             </mdl-button>
             <mdl-button icon>
                 <i class="material-icons">comment</i>
+                <i class="icons-number">99</i>
             </mdl-button>
             <mdl-button>
                 <i class="material-icons">launch</i>
@@ -44,5 +46,12 @@
     .weibo-card > .mdl-card__actions > button{
         float: right;
         margin: 5px 20px 5px 10px;
+    }
+
+    .icons-number{
+        font-family: "Roboto","Helvetica","Arial",sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.24);
     }
 </style>
