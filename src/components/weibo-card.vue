@@ -15,8 +15,8 @@
             </mdl-button>
         </div>
         <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments" v-if="show" transition="fade">
-            <reply-card></reply-card>
-            <card-comments></card-comments>
+            <reply-card reply-show='true'></reply-card>
+            <card-comments v-for="comment in comments"></card-comments>
         </div>
     </div>
 </template>
@@ -27,7 +27,8 @@
     export default{
         'data': function () {
             return {
-                show: false
+                'show': false,
+                'comments': [1, 2, 3, 4, 5]
             }
         },
 

@@ -42,5 +42,6 @@ export default function (router) {
   })
   
   router.afterEach(function (transition) {
+    
   })
 };

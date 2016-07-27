@@ -7,9 +7,9 @@
             <div class="mdl-card__actions mdl-card--border">
                 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
                     <div class="mdl-tabs__tab-bar">
-                        <a class="mdl-tabs__tab" @click="goRoute('my_host_page')">我的主页</a>
-                        <a class="mdl-tabs__tab" @click="goRoute('my_photos')">我的相册</a>
-                        <a class="mdl-tabs__tab" @click="goRoute('my_settings')">管理中心</a>
+                        <a class="mdl-tabs__tab" v-bind:class="{'is-active': tab_active === 'my_host_page'}" @click="goRoute('my_host_page')">我的主页</a>
+                        <a class="mdl-tabs__tab" v-bind:class="{'is-active': tab_active === 'my_photos'}" @click="goRoute('my_photos')">我的相册</a>
+                        <a class="mdl-tabs__tab" v-bind:class="{'is-active': tab_active === 'my_settings'}" @click="goRoute('my_settings')">管理中心</a>
                     </div>
                 </div>
             </div>
@@ -22,14 +22,30 @@
     export default {
         'data': function () {
             return {
-
+                'tab_active': ''
             }
         },
         'methods': {
             'goRoute': function (routeName) {
-                this.$route.router.go({name: routeName});
+                this.$route.router.go({name: routeName})
+            }
+        },
+
+        'beforeCompile': function () {
+            if (this.$route.name === 'account') {
+                this.$route.router.go({name: 'my_host_page'})
+            }
+            if (this.$route.name === 'my_host_page') {
+                this.tab_active = 'my_host_page'
+            }
+        },
+
+        'watch': {
+            '$route.name': function (val, oldVal) {
+                this.tab_active = val;
             }
         }
+    
     }
 </script>
 <style>

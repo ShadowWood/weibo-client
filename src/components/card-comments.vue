@@ -55,6 +55,7 @@
 
     .comment {
         padding-top: 15px;
+        padding-bottom: 15px;
         border-top:1px solid rgba(0, 0, 0, 0.24);
     }
 
