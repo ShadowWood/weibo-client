@@ -18,13 +18,46 @@
         </div>
       </div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href="">登录</a>
-        <a class="mdl-navigation__link" href="">注册</a>
+        <a class="mdl-navigation__link" @click="openLoginDialog()">登录</a>
+        <a class="mdl-navigation__link" @click="openSignupDialog()">注册</a>
       </nav>
     </div>
   </header>
+
+  <login-form :option='toggleLoginForm'></login-form>
+
+  <mdl-dialog v-ref:signup-form full-width title="注册">
+    <template slot="actions">
+      <mdl-button primary @click="number++">Increase</mdl-button>
+      <mdl-button primary @click="number--">Decrease</mdl-button>
+      <mdl-button @click="$refs.signupForm.close">Close</mdl-button>
+    </template>
+  </mdl-dialog>
 </template>
 
 <script>
+import LoginForm from './login-form'
+import SignupForm from './signup-form'
 
+export default {
+  'data': function () {
+    return {
+      'toggleLoginForm': false
+    }
+  },
+
+  'methods': {
+    'openLoginDialog': function () {
+      this.toggleLoginForm = true;
+    },
+    'openSignupDialog': function () {
+      this.$refs.signupForm.open()
+    }
+  },
+
+  'components': {
+    'login-form': LoginForm,
+    'signup-form': SignupForm
+  }
+}
 </script>

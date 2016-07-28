@@ -3,6 +3,10 @@
         <user-message></user-message>
         <div class="mdl-card__actions mdl-card--border">
             <mdl-button icon>
+                <i class="material-icons">thumb_down</i>
+                <i class="icons-number">99</i>
+            </mdl-button>
+            <mdl-button icon>
                 <i class="material-icons">thumb_up</i>
                 <i class="icons-number">99</i>
             </mdl-button>
