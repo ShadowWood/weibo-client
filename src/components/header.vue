@@ -24,15 +24,9 @@
     </div>
   </header>
 
-  <login-form :option='toggleLoginForm'></login-form>
+  <login-form></login-form>
+  <signup-form></signup-form>
 
-  <mdl-dialog v-ref:signup-form full-width title="注册">
-    <template slot="actions">
-      <mdl-button primary @click="number++">Increase</mdl-button>
-      <mdl-button primary @click="number--">Decrease</mdl-button>
-      <mdl-button @click="$refs.signupForm.close">Close</mdl-button>
-    </template>
-  </mdl-dialog>
 </template>
 
 <script>
@@ -48,10 +42,10 @@ export default {
 
   'methods': {
     'openLoginDialog': function () {
-      this.toggleLoginForm = true;
+      this.$broadcast('toggleLogin', true);
     },
     'openSignupDialog': function () {
-      this.$refs.signupForm.open()
+      this.$broadcast('toggleSignup', true);
     }
   },
 

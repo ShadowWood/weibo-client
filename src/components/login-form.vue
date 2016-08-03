@@ -4,16 +4,18 @@
             <mdl-textfield floating-label="email" :value.sync="email"></mdl-textfield>
             <br/>
             <mdl-textfield type='password' floating-label="password" :value.sync="password"></mdl-textfield>
+        </form>
+        <template slot="actions">
             <mdl-button primary @click="login()">登录</mdl-button>
             <mdl-button @click="$refs.loginForm.close">关闭</mdl-button>
-        </form>
+        </template>
     </mdl-dialog>
 </template>
 
 <script>
 
     export default {
-        'props': ['option'],
+        'props': ['toggle'],
         'data': function () {
             return {
                 'email': '',
@@ -23,19 +25,23 @@
 
         'methods': {
             'openLoginForm': function () {
-                this.$refs.loginForm.open()
+                this.$refs.loginForm.open();
             },
             'closeLoginForm': function () {
-                this.$refs.loginForm.close()
+                this.$refs.loginForm.close();
             },
             'login': function () {
                 
             }
         },
 
-        'watch': {
-            'option': function (oldVal, newVal) {
-                if(newVal) this.openLoginForm()
+        'events': {
+            'toggleLogin': function (msg){
+                if(msg) {
+                    this.openLoginForm();
+                } else {
+                    this.closeLoginForm();
+                }
             }
         }
     }
