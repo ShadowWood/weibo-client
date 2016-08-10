@@ -13,6 +13,9 @@
   },
   "dependencies": {
     "babel-runtime": "^6.0.0",
+    "lg-thumbnail.js": "0.0.4",
+    "lg-zoom.js": "0.0.2",
+    "lightgallery.js": "0.0.3",
     "material-design-lite": "^1.1.3",
     "vue": "^1.0.21",
     "vue-mdl": "^0.8.5",

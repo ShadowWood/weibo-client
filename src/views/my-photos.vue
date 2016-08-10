@@ -1,10 +1,14 @@
 <template>
     <div class="mdl-cell mdl-cell--12-col photo-board">
-        <div class="mdl-card mdl-shadow--2dp mdl-grid">
+        <div class="mdl-card mdl-shadow--2dp mdl-grid" id="photo-card">
             <div v-for="photo in photos" class="demo-card-image mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col">
-                <div class="mdl-card__title mdl-card--expand"></div>
+                <div class="mdl-card__title mdl-card--expand">
+                    <a href="/static/img/photos/p1.jpg">
+                        <img src="/static/img/photos/p1.jpg"/>
+                    </a>
+                </div>
                 <div class="mdl-card__actions">
-                <span class="demo-card-image__filename">Image.jpg</span>
+                    <span class="demo-card-image__filename">Image.jpg</span>
                 </div>
             </div>
         </div>    
@@ -12,13 +16,25 @@
 </template>
 
 <script>
-export default {
-    'data': function () {
-        return {
-            'photos': [1, 2, 3, 4, 5, 6]
+
+    export default {
+        'data': function () {
+            return {
+                'photos': [1, 2, 3, 4, 5, 6]
+            }
+        },
+        'compiled': function () {
+            require(['lightgallery.js'], function() {
+                require(['lg-zoom.js', 'lg-thumbnail.js'], function(){
+                    lightGallery(document.getElementById('photo-card'), {
+                        thumbnail:true,
+                        animateThumb: false,
+                        showThumbByDefault: false
+                    });
+                })
+            });
         }
     }
-}
 </script>
 <style>
     .photo-board {
@@ -31,7 +47,7 @@ export default {
     }
 
     .demo-card-image.mdl-card {
-        background: url('../assets/images/p1.jpg') center / cover;
+        /*background: url('/static/img/photos/p1.jpg') center / cover;*/
     }
     .demo-card-image > .mdl-card__actions {
         height: 52px;

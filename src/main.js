@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Router from './router-config'
 import App from './App'
 
+
 /* eslint-disable no-new */
 Vue.use(VueMdl)
 Vue.use(VueRouter)
