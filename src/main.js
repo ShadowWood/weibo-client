@@ -3,7 +3,7 @@ import VueMdl from 'vue-mdl'
 import VueRouter from 'vue-router'
 import Router from './router-config'
 import App from './App'
-
+require('material-design-lite');
 
 /* eslint-disable no-new */
 Vue.use(VueMdl)

@@ -1,12 +1,11 @@
 <template>
     <div class="demo-gallery">
         <ul id="photo-card">
-            <li v-for="photo in photos" data-responsive="http://7xu027.com1.z0.glb.clouddn.com/index-background-2048.jpg"
-                data-src="http://7xu027.com1.z0.glb.clouddn.com/index-background-2048.jpg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
+            <li v-for="photo in photos" class="mdl-cell mdl-cell--3-col" data-responsive="http://7xu027.com1.z0.glb.clouddn.com/build-Radius.jpg"
+                data-src="http://7xu027.com1.z0.glb.clouddn.com/build-Radius.jpg" data-sub-html="<h4>Photo {{ photo }}</h4><p>{{photo}}</p>">
                 <a href="">
-                    <img class="img-responsive" src="http://7xu027.com1.z0.glb.clouddn.com/index-background-2048.jpg">
+                    <img class="img-responsive" src="http://7xu027.com1.z0.glb.clouddn.com/build-Radius.jpg">
                     <div class="demo-gallery-poster">
-                        <!--<img src="http://sachinchoolur.github.io/lightgallery.js/static/img/zoom.png">-->
                         <i class="material-icons">search</i>
                     </div>
                 </a>
@@ -22,7 +21,7 @@
         'data': function () {
             return {}
         },
-        'compiled': function () {
+        'ready': function () {
             require(['lightgallery.js'], function() {
                 require(['lg-zoom.js', 'lg-thumbnail.js'], function(){
                     lightGallery(document.getElementById('photo-card'), {
@@ -44,9 +43,7 @@
     
     .demo-gallery > ul > li {
         margin-bottom: 15px;
-        width: 180px;
         display: inline-block;
-        margin-right: 15px;
         list-style: outside none none;
     }
     

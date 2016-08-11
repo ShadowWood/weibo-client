@@ -6,15 +6,18 @@
         <router-view></router-view>
       </div>
     </main>
+    <footer-mine></footer-mine>
   </div>
 </template>
 
 <script>
   import Header from './components/header'
+  import Footer from './components/footer'
 
   module.exports = {
     'components': {
-      'app-header': Header
+      'app-header': Header,
+      'footer-mine': Footer
     },
 
     'data': function () {
