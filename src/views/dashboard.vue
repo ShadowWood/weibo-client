@@ -35,11 +35,10 @@
                 {'title': '我的相册', 'id': 'my_photos'},
                 {'title': '管理中心', 'id': 'my_settings'}
             ]
-            var accountPath = this.$route.name
             return {
                 'tab_active': '',
                 'tabs': tabs,
-                'accountPath': accountPath
+                'accountPath': 'my_host_page'
             }
         },
         'methods': {
@@ -56,7 +55,7 @@
 
         'watch': {
             '$route.name': function (val, oldVal) {
-                this.tab_active = val;
+                this.accountPath = val;
             },
             'accountPath': function (val, oldVal) {
                 this.goRoute(val);

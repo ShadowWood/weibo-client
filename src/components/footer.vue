@@ -11,6 +11,17 @@
 </template>
 
 <script>
+
+    export default {
+        'data': function () {
+            return {}
+        },
+
+        'ready': function (){
+            var appEl = document.getElementById('app');
+            componentHandler.upgradeElement(appEl);
+        }
+    }
 </script>
 
 <style>

@@ -3,10 +3,12 @@ import VueMdl from 'vue-mdl'
 import VueRouter from 'vue-router'
 import Router from './router-config'
 import App from './App'
+import * as VueForm from 'vue-form'
 require('material-design-lite');
 
 /* eslint-disable no-new */
 Vue.use(VueMdl)
+Vue.use(VueForm)
 Vue.use(VueRouter)
 
 var app = Vue.extend(App)
