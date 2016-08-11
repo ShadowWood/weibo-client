@@ -1,21 +1,23 @@
 <template>
     <div class="mdl-cell mdl-cell--12-col photo-board">
-        <div class="mdl-card mdl-shadow--2dp mdl-grid" id="photo-card">
+        <!--<div class="mdl-card mdl-shadow--2dp mdl-grid">
             <div v-for="photo in photos" class="demo-card-image mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col">
-                <div class="mdl-card__title mdl-card--expand">
-                    <a href="/static/img/photos/p1.jpg">
-                        <img src="/static/img/photos/p1.jpg"/>
+                <div class="mdl-card__title mdl-card--expand" id="photo-card">
+                    <a herf="http://7xu027.com1.z0.glb.clouddn.com/build-Radius.jpg">
+                        <img src="http://7xu027.com1.z0.glb.clouddn.com/build-Radius.jpg">
                     </a>
                 </div>
                 <div class="mdl-card__actions">
                     <span class="demo-card-image__filename">Image.jpg</span>
                 </div>
             </div>
-        </div>    
-    </div>
+        </div>    -->
+        <div class="cont mdl-card mdl-shadow--2dp mdl-grid">
+            <lg-view :photos="photos"></lg-view>
+        </div>
 </template>
-
 <script>
+    import LgView from '../components/lg-view'
 
     export default {
         'data': function () {
@@ -23,16 +25,8 @@
                 'photos': [1, 2, 3, 4, 5, 6]
             }
         },
-        'compiled': function () {
-            require(['lightgallery.js'], function() {
-                require(['lg-zoom.js', 'lg-thumbnail.js'], function(){
-                    lightGallery(document.getElementById('photo-card'), {
-                        thumbnail:true,
-                        animateThumb: false,
-                        showThumbByDefault: false
-                    });
-                })
-            });
+        'components': {
+            'lg-view': LgView
         }
     }
 </script>
