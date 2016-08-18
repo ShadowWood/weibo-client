@@ -49,6 +49,7 @@
             },
             'login': function () {
                 this.$refs.loginForm.close();
+                this.$root.currentUser = {nick: 'TestUser'};
                 this.$route.router.go({name: 'my_host_page'})
             }
         },

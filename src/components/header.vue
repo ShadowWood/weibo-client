@@ -19,7 +19,11 @@
                  id="waterfall-exp" placeholder="搜索感兴趣的人或微博">
         </div>
       </div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
+      <nav v-if="$root.currentUser" class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" @click="goHost()">{{ $root.currentUser.nick }}</a>
+        <a class="mdl-navigation__link" @click="logOut()">退出登录</a>
+      </nav>
+      <nav v-else class="mdl-navigation mdl-layout--large-screen-only">
         <a class="mdl-navigation__link" @click="openLoginDialog()">登录</a>
         <a class="mdl-navigation__link" @click="openSignupDialog()">注册</a>
       </nav>
@@ -48,6 +52,13 @@ export default {
     },
     'openSignupDialog': function () {
       this.$broadcast('toggleSignup', true);
+    },
+    'logOut': function () {
+      this.$root.currentUser = false;
+      this.$route.router.go({name: 'index'})
+    },
+    'goHost': function(){
+      this.$route.router.go({name: 'my_host_page'});
     }
   },
 

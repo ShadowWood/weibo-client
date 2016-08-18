@@ -70,6 +70,7 @@
             },
             'signup': function () {
                 this.$refs.signupForm.close();
+                this.$root.currentUser = {nick: 'TestUser'};
                 this.$route.router.go({name: 'my_host_page'})
             }
         },

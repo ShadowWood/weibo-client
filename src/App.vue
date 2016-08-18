@@ -21,7 +21,9 @@
     },
 
     'data': function () {
-      return {}
+      return {
+        'currentUser': false
+      }
     }
   }
 </script>
