@@ -1,5 +1,5 @@
 <template>
-  <header class="mdl-layout__header">
+  <header class="mdl-layout__header" id="header">
     <div class="mdl-layout__header-row mdl-layout__header--scroll">
       <!-- Title -->
       <span class="mdl-layout-title">
@@ -20,8 +20,8 @@
         </div>
       </div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a href="#" class="mdl-navigation__link" @click="openLoginDialog()">登录</a>
-        <a href="#" class="mdl-navigation__link" @click="openSignupDialog()">注册</a>
+        <a class="mdl-navigation__link" @click="openLoginDialog()">登录</a>
+        <a class="mdl-navigation__link" @click="openSignupDialog()">注册</a>
       </nav>
     </div>
   </header>
@@ -67,5 +67,9 @@ export default {
   .mdl-layout-title > a {
     color: #fff;
     text-decoration: none;
+  }
+
+  a{
+    cursor: pointer;
   }
 </style>  
